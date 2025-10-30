@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Featured Recipes Collection - Recipes Idea Hub</title>
+    
+    <!-- SEO Meta Tags with Keywords -->
+    <meta name="description" content="A featured collection of easy recipes including quick dinner ideas, instant pot recipes, classic comfort meals, and budget-friendly family meals.">
+    <meta name="keywords" content="Easy Recipes, Quick Dinner Ideas, Healthy Meal Prep, Weeknight Meals, Family Favorites, Instant Pot Dinner Ideas, Classic Meatloaf Recipe, Recipes with Ground Beef">
+    
+    <style>
+        /* style.css - PROFESSIONAL, MODERN, AND APPETIZING DESIGN (EMBEDDED) */
+
+        /* --- General Resets and Typography --- */
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f7f7f7; /* Very light, soft background */
+        }
+
+        main {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Georgia', serif; /* A classic, elegant font for headings */
+            color: #a30000; /* Deep red for high contrast and appetite */
+            font-weight: 700;
+        }
+
+        /* --- Header and Navigation --- */
+        header {
+            background-color: #ffffff;
+            padding: 15px 20px;
+            border-bottom: 5px solid #ff7f00; /* Vibrant Orange accent */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.0em;
+            color: #333; /* Dark color for brand name */
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            padding: 10px 18px;
+            display: block;
+            font-weight: 600;
+            border-radius: 6px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #ff7f00; /* Orange background on hover */
+            color: #fff;
+        }
+
+        /* --- Recipe Specific Styling --- */
+        .recipe-main {
+            padding: 40px 0; /* Padding around the content, not inside */
+        }
+
+        .recipe-details {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+            margin-bottom: 40px; /* Space between different recipes */
+        }
+
+        .recipe-details h2 {
+            font-size: 2.5em;
+            color: #a30000;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #f0ad4e;
+        }
+
+        .recipe-info {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px 0;
+            border-top: 2px dashed #f0ad4e;
+            border-bottom: 2px dashed #f0ad4e;
+            margin: 30px 0;
+            font-weight: 600;
+            flex-wrap: wrap;
+            background-color: #fffaf5; /* Light background for detail box */
+            border-radius: 8px;
+        }
+
+        .recipe-info p {
+            margin: 5px 15px;
+        }
+
+        .ingredients h3, .instructions h3 {
+            color: #ff7f00;
+            border-bottom: 1px solid #f0ad4e;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+
+        .ingredients ul, .instructions ol {
+            padding-left: 20px;
+        }
+
+        .ingredients li, .instructions li {
+            margin-bottom: 12px;
+            padding-left: 5px;
+            list-style-type: disc;
+        }
+        
+        .seo-text {
+            font-size: 0.85em;
+            color: #777;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 50px;
+            font-size: 0.95em;
+        }
+
+        footer a {
+            color: #ff7f00;
+            text-decoration: none;
+        }
+
+        /* --- Cookie Banner --- */
+        .cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #333;
+            color: #fff;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            flex-wrap: wrap;
+            font-size: 0.95em;
+        }
+
+        .cookie-banner.hidden {
+            display: none;
+        }
+
+        .cookie-banner p {
+            margin: 5px 0;
+        }
+
+        .cookie-banner a {
+            color: #ff7f00;
+            text-decoration: underline;
+        }
+
+        #accept-cookies {
+            background-color: #ff7f00;
+            color: #333;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            flex-shrink: 0;
+            margin-left: 20px;
+        }
+
+        #accept-cookies:hover {
+            background-color: #cc5500;
+        }
+        
+        /* --- Responsive Adjustments --- */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul {
+                margin-top: 10px;
+            }
+
+            nav ul li a {
+                padding: 8px 10px;
+                font-size: 0.9em;
+            }
+            
+            .cookie-banner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            #accept-cookies {
+                width: 100%;
+                margin-top: 10px;
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Recipes Idea Hub</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="recipe.html">Recipe of the Day</a></li>
+                <li><a href="terms.html">Terms</a></li>
+                <li><a href="privacy.html">Privacy</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="recipe-main">
+        <h1>Our Featured Recipe Collection</h1>
+        <p>A selection of our best recipes covering all your weekly needs: speed, appliances, comfort, and budget.</p>
+
+        <!-- RECIPE 1: Convenience/Speed & Healthy Meal Prep (Existing) -->
+        <section class="recipe-details">
+            <h2>One-Pan Lemon Herb Chicken and Veggies (Quick Dinner Idea)</h2>
+            
+            <p class="recipe-summary">This One-Pan meal is an ideal quick dinner idea for busy weeknights. It’s a complete, healthy meal prep solution and a simple family favorite requiring minimal cleanup.</p>
+
+            <div class="recipe-info">
+                <p>Prep Time: 15 mins</p>
+                <p>Cook Time: 35 mins</p>
+                <p>Yield: 4 servings</p>
+            </div>
+
+            <hr>
+
+            <div class="ingredients">
+                <h3>Ingredients</h3>
+                <ul>
+                    <li>1.5 lbs boneless, skinless chicken thighs or breasts</li>
+                    <li>1.5 lbs small potatoes, quartered (Yukon gold or red)</li>
+                    <li>1 large head of broccoli, cut into florets</li>
+                    <li>1 large lemon, sliced thinly</li>
+                    <li>4 tablespoons olive oil</li>
+                    <li>2 teaspoons dried Italian herbs (oregano, basil, thyme)</li>
+                    <li>1 teaspoon salt</li>
+                    <li>1/2 teaspoon black pepper</li>
+                    <li>2 cloves garlic, minced</li>
+                </ul>
+            </div>
+
+            <div class="instructions">
+                <h3>Instructions</h3>
+                <ol>
+                    <li>Preheat your oven to 400°F (200°C). Line a large rimmed baking sheet with parchment paper for the easiest cleanup.</li>
+                    <li>In a large bowl, combine the quartered potatoes, broccoli florets, 2 tablespoons of olive oil, Italian herbs, salt, pepper, and minced garlic. Toss until everything is evenly coated.</li>
+                    <li>Spread the vegetable mixture onto the prepared baking sheet in a single layer.</li>
+                    <li>Place the chicken pieces in the same bowl. Add the remaining 2 tablespoons of olive oil and a squeeze of fresh lemon juice. Toss the chicken to coat.</li>
+                    <li>Arrange the chicken pieces among the vegetables on the baking sheet. Lay the thin lemon slices over the chicken pieces.</li>
+                    <li>Bake for 35 to 40 minutes, or until the chicken is cooked through and the juices run clear, and the potatoes are tender. For extra crispiness, broil for the last 2-3 minutes.</li>
+                    <li>Serve immediately. This easy recipe makes for a great healthy meal prep for lunches the next day!</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- RECIPE 2: Appliance-Focused (Instant Pot Dinner Ideas) -->
+        <section class="recipe-details">
+            <h2>Instant Pot 10-Minute Chili Mac</h2>
+            
+            <p class="recipe-summary">A fast and easy Instant Pot dinner idea that combines classic chili flavors with macaroni pasta. Perfect for a weeknight meal when you need dinner on the table fast.</p>
+
+            <div class="recipe-info">
+                <p>Prep Time: 5 mins</p>
+                <p>Cook Time: 10 mins (Pressure)</p>
+                <p>Yield: 6 servings</p>
+            </div>
+
+            <hr>
+
+            <div class="ingredients">
+                <h3>Ingredients</h3>
+                <ul>
+                    <li>1 lb ground beef or turkey</li>
+                    <li>1 medium onion, diced</li>
+                    <li>1 (15 oz) can tomato sauce</li>
+                    <li>1 (15 oz) can chili beans, drained and rinsed</li>
+                    <li>1 cup beef broth</li>
+                    <li>1 tablespoon chili powder</li>
+                    <li>1 teaspoon cumin</li>
+                    <li>2 cups elbow macaroni</li>
+                    <li>1 cup shredded cheddar cheese (for topping)</li>
+                </ul>
+            </div>
+
+            <div class="instructions">
+                <h3>Instructions</h3>
+                <ol>
+                    <li>Set the Instant Pot to 'Sauté' mode. Add the ground meat and diced onion. Cook until the meat is browned. Drain any excess fat.</li>
+                    <li>Stir in the tomato sauce, chili beans, beef broth, chili powder, and cumin. Add salt and pepper to taste.</li>
+                    <li>Stir in the dry macaroni. Ensure the pasta is mostly submerged in the liquid.</li>
+                    <li>Cancel 'Sauté' mode. Secure the lid, set the valve to 'Sealing', and pressure cook on 'Manual/High' for 4 minutes.</li>
+                    <li>Once cooking is complete, allow a 5-minute natural pressure release (NPR), then quick release the remaining pressure.</li>
+                    <li>Stir well and let it sit for a couple of minutes to thicken. Serve immediately topped with shredded cheese.</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- RECIPE 3: Classics/Comfort (Classic Meatloaf Recipe) -->
+        <section class="recipe-details">
+            <h2>Hearty Classic Meatloaf (Family Favorite)</h2>
+            
+            <p class="recipe-summary">This is the classic meatloaf recipe your family will ask for again and again. A truly comforting home cooking dish that is easy to prepare and budget friendly.</p>
+
+            <div class="recipe-info">
+                <p>Prep Time: 15 mins</p>
+                <p>Cook Time: 1 hour</p>
+                <p>Yield: 8 servings</p>
+            </div>
+
+            <hr>
+
+            <div class="ingredients">
+                <h3>Ingredients</h3>
+                <ul>
+                    <li>2 lbs lean ground beef</li>
+                    <li>1/2 cup breadcrumbs or crushed crackers</li>
+                    <li>1/2 cup milk</li>
+                    <li>1 egg, lightly beaten</li>
+                    <li>1/4 cup finely chopped onion</li>
+                    <li>1 tablespoon Worcestershire sauce</li>
+                    <li>1 teaspoon salt</li>
+                    <li>1/2 teaspoon garlic powder</li>
+                    <li>**For the Glaze:** 1/2 cup ketchup, 2 tablespoons brown sugar, 1 tablespoon vinegar.</li>
+                </ul>
+            </div>
+
+            <div class="instructions">
+                <h3>Instructions</h3>
+                <ol>
+                    <li>Preheat your oven to 350°F (175°C). Lightly grease a loaf pan or a baking sheet.</li>
+                    <li>In a large bowl, combine the breadcrumbs and milk. Let stand for 5 minutes.</li>
+                    <li>Add the ground beef, egg, chopped onion, Worcestershire sauce, salt, and garlic powder to the bowl. Mix gently with your hands until just combined. Do not overmix.</li>
+                    <li>Form the mixture into a loaf shape and place it in the prepared pan or on the baking sheet.</li>
+                    <li>In a small bowl, whisk together the ketchup, brown sugar, and vinegar for the glaze. Spread about half of the glaze evenly over the top of the meatloaf.</li>
+                    <li>Bake for 45 minutes. Remove from the oven, spread the remaining glaze on top, and return to the oven for another 15 minutes, or until the internal temperature reaches 160°F (71°C).</li>
+                    <li>Let rest for 10 minutes before slicing and serving.</li>
+                </ol>
+            </div>
+        </section>
+        
+        <!-- RECIPE 4: Cost-Conscious (Recipes with Ground Beef) -->
+        <section class="recipe-details">
+            <h2>Simple Budget Ground Beef Tacos</h2>
+            
+            <p class="recipe-summary">A cheap dinner idea that is big on flavor and easy on the wallet. This simple ground beef recipe is customizable and perfect for feeding a budget friendly family meal.</p>
+
+            <div class="recipe-info">
+                <p>Prep Time: 10 mins</p>
+                <p>Cook Time: 20 mins</p>
+                <p>Yield: 8 tacos</p>
+            </div>
+
+            <hr>
+
+            <div class="ingredients">
+                <h3>Ingredients</h3>
+                <ul>
+                    <li>1 lb ground beef</li>
+                    <li>1 packet (or 2 tablespoons) taco seasoning</li>
+                    <li>1/2 cup water</li>
+                    <li>8 hard or soft taco shells</li>
+                    <li>**Suggested Toppings:** Shredded lettuce, diced tomatoes, shredded cheese, sour cream.</li>
+                </ul>
+            </div>
+
+            <div class="instructions">
+                <h3>Instructions</h3>
+                <ol>
+                    <li>In a large skillet, brown the ground beef over medium-high heat. Drain off any excess fat.</li>
+                    <li>Reduce the heat to medium. Stir in the taco seasoning and water.</li>
+                    <li>Bring the mixture to a simmer and cook for 5 to 7 minutes, or until the liquid has mostly reduced and the meat is fully coated in the seasoning.</li>
+                    <li>While the meat simmers, prepare your toppings and warm your taco shells according to the package instructions.</li>
+                    <li>Spoon the seasoned ground beef mixture into the taco shells.</li>
+                    <li>Serve immediately with your favorite toppings. This recipe is also great for making a budget friendly family meal into a taco salad.</li>
+                </ol>
+            </div>
+        </section>
+
+        <p class="seo-text">This collection features our best recipes, covering everything from healthy meal prep to simple desserts, ensuring every weeknight meal is covered.</p>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Recipes Idea Hub. All rights reserved.</p>
+    </footer>
+    
+    <!-- Cookie Consent Banner HTML - Now Confirmed -->
+    <div id="cookie-banner" class="cookie-banner hidden">
+        <p>This website uses cookies to ensure you get the best experience. By continuing, you agree to our <a href="privacy.html">Privacy Policy</a>.</p>
+        <button id="accept-cookies">Got it!</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
